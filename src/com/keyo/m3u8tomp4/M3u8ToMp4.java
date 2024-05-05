@@ -9,9 +9,6 @@ import javax.crypto.spec.SecretKeySpec;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * M3u8转mp4
@@ -32,7 +29,7 @@ public class M3u8ToMp4 {
     /**
      * 模式
      */
-    private static final String model = "AES/CBC/PKCS5Padding";
+    private static final String MODEL = "AES/CBC/PKCS5Padding";
     /**
      * 输入的文件夹
      */
@@ -160,7 +157,7 @@ public class M3u8ToMp4 {
     private byte[] decrypt(byte[] bytes, String key) throws Exception {
         SecretKeySpec secretKeySpec = new SecretKeySpec(key.getBytes(), AES);
         IvParameterSpec ivSpec = new IvParameterSpec(IV.getBytes());
-        Cipher cipher = Cipher.getInstance(model);
+        Cipher cipher = Cipher.getInstance(MODEL);
         cipher.init(Cipher.DECRYPT_MODE, secretKeySpec, ivSpec);
         byte[] result = cipher.doFinal(bytes);
         return result;
