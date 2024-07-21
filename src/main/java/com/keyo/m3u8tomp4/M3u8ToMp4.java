@@ -1,7 +1,7 @@
 package com.keyo.m3u8tomp4;
 
-import com.keyo.utils.CloseableUtils;
-import com.keyo.utils.FileUtils;
+import com.keyo.lib.utils.CloseableUtils;
+import com.keyo.lib.utils.FileUtils;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
